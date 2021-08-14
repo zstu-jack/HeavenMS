@@ -945,7 +945,7 @@ public class Server {
         acceptor = new NioSocketAcceptor();
         acceptor.getFilterChain().addLast("codec", (IoFilter) new ProtocolCodecFilter(new MapleCodecFactory()));
         acceptor.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE, 30);
-        acceptor.setHandler(new MapleServerHandler());
+        acceptor.setHandler(new MapleServerHandler());      // callback: sessionOpened, messageReceived, sessionClosed. etc...
         try {
             acceptor.bind(new InetSocketAddress(8484));
         } catch (IOException ex) {

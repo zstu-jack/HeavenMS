@@ -74,12 +74,14 @@ public class MapleServerHandler extends IoHandlerAdapter {
     private Map<MapleClient, Long> tempIdleSessions = new HashMap<>();
     private ScheduledFuture<?> idleManager = null;
     
+    // login handler
     public MapleServerHandler() {
         this.processor = PacketProcessor.getProcessor(-1, -1);
         
         idleManagerTask();
     }
 
+    // world-channel handler
     public MapleServerHandler(int world, int channel) {
         this.processor = PacketProcessor.getProcessor(world, channel);
         this.world = world;

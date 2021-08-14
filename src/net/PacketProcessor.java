@@ -146,9 +146,9 @@ public final class PacketProcessor {
             registerHandler(RecvOpcode.MOVE_LIFE, new MoveLifeHandler());
             registerHandler(RecvOpcode.CLOSE_RANGE_ATTACK, new CloseRangeDamageHandler());
             registerHandler(RecvOpcode.RANGED_ATTACK, new RangedAttackHandler());
-            registerHandler(RecvOpcode.MAGIC_ATTACK, new MagicDamageHandler());
+            registerHandler(RecvOpcode.MAGIC_ATTACK, new MagicDamageHandler());                   // AttackInfo: recorded the number of monsters(mob) and attack informations then broadcast to other players.
             registerHandler(RecvOpcode.TAKE_DAMAGE, new TakeDamageHandler());
-            registerHandler(RecvOpcode.MOVE_PLAYER, new MovePlayerHandler());
+            registerHandler(RecvOpcode.MOVE_PLAYER, new MovePlayerHandler());                     // move the player logically and broadcast
             registerHandler(RecvOpcode.USE_CASH_ITEM, new UseCashItemHandler());
             registerHandler(RecvOpcode.USE_ITEM, new UseItemHandler());
             registerHandler(RecvOpcode.USE_RETURN_SCROLL, new UseItemHandler());
