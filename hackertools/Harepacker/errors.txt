@@ -1,0 +1,33 @@
+----- Start of the error log. [2021/8/4 0:00:00] -----
+[Critical] : parse sound header failed
+
+----- Start of the error log. [2021/8/4 0:00:00] -----
+[Critical] : parse sound header failed
+
+----- Start of the error log. [2021/8/4 0:00:00] -----
+[Critical] : parse sound header failed
+
+----- Start of the error log. [2021/8/4 0:00:00] -----
+[Critical] : parse sound header failed
+
+----- Start of the error log. [2021/8/4 0:00:00] -----
+[Critical] : parse sound header failed
+
+----- Start of the error log. [2021/8/4 0:00:00] -----
+[Critical] : parse sound header failed
+
+----- Start of the error log. [2021/8/9 0:00:00] -----
+[Critical] : parse sound header failed
+
+----- Start of the error log. [2021/8/9 0:00:00] -----
+[Critical] : parse sound header failed
+
+----- Start of the error log. [2021/8/10 0:00:00] -----
+[Critical] : parse sound header failed
+
+----- Start of the error log. [2021/8/10 0:00:00] -----
+[Critical] : parse sound header failed
+
+----- Start of the error log. [2021/8/10 0:00:00] -----
+[Critical] : parse sound header failed
+
