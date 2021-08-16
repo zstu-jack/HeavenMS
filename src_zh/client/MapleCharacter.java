@@ -8859,7 +8859,7 @@ public class MapleCharacter extends AbstractMapleCharacterObject {
     }
 
     public void sendPolice(int greason, String reason, int duration) {
-        announce(MaplePacketCreator.sendPolice(String.format("你已经被#b %s 管理员 %s.#k阻止了", "RainMS", reason)));
+        announce(MaplePacketCreator.sendPolice(String.format("你已经被#b %s 管理员 %s.#k阻止了", "HappyMS", reason)));
         this.isbanned = true;
         TimerManager.getInstance().schedule(new Runnable() {
             @Override
@@ -10329,7 +10329,7 @@ public class MapleCharacter extends AbstractMapleCharacterObject {
         }
         
         this.ban(reason);
-        announce(MaplePacketCreator.sendPolice(String.format("你因为黑客行为的原因被#b %s 管理员阻止了！.#k", "RainMS")));
+        announce(MaplePacketCreator.sendPolice(String.format("你因为黑客行为的原因被#b %s 管理员阻止了！.#k", "HappyMS")));
         TimerManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {

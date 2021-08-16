@@ -866,7 +866,7 @@ public class Server {
     }
     
     public void init() {
-        System.out.println("RainMS v" + ServerConstants.VERSION + " 开始启动.\r\n");
+        System.out.println("HappyMS v" + ServerConstants.VERSION + " 开始启动.\r\n");
         
         if(YamlConfig.config.server.SHUTDOWNHOOK)
             Runtime.getRuntime().addShutdownHook(new Thread(shutdown(false)));
