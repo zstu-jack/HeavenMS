@@ -98,6 +98,7 @@ public class NPCScriptManager extends AbstractScriptManager {
                 cm.dispose();
                 return;
             }
+            // put MapClient Object into cm for js side
             iv.put("cm", cm);
             scripts.put(c, iv);
             try {

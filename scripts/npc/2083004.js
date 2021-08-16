@@ -144,11 +144,11 @@ function action(mode, type, selection) {
                 var min = exped.getMinSize();
                 
                 var size = expedition.getMemberList().size();
-                if (size < min) {
-                    cm.sendOk("You need at least " + min + " players registered in your expedition.");
-                    cm.dispose();
-                    return;
-                }
+                // if (size < min) {
+                //     cm.sendOk("You need at least " + min + " players registered in your expedition.");
+                //     cm.dispose();
+                //     return;
+                // }
                 
                 cm.sendOk("Good luck! All of Leafre is counting on you.");
                 status = 4;

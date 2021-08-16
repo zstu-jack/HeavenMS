@@ -66,6 +66,7 @@ public final class QuestActionHandler extends AbstractMaplePacketHandler {
         return true;
     }
     
+    // check can quest complete when npc nearby or ... 
     @Override
     public final void handlePacket(SeekableLittleEndianAccessor slea, MapleClient c) {
         byte action = slea.readByte();

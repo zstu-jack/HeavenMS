@@ -33,6 +33,8 @@ import tools.FilePrinter;
 import tools.MaplePacketCreator;
 import tools.data.input.SeekableLittleEndianAccessor;
 
+
+// npc talk
 public final class NPCTalkHandler extends AbstractMaplePacketHandler {
     @Override
     public final void handlePacket(SeekableLittleEndianAccessor slea, MapleClient c) {
