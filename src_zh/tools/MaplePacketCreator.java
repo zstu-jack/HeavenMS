@@ -1043,6 +1043,7 @@ public class MaplePacketCreator {
                 }
                 mplew.writeInt(updateMask);
                 for (Pair<MapleStat, Integer> statupdate : mystats) {
+                        // the attr updated
                         if (statupdate.getLeft().getValue() >= 1) {
                                 if (statupdate.getLeft().getValue() == 0x1) {
                                         mplew.write(statupdate.getRight().byteValue());
@@ -1057,7 +1058,7 @@ public class MaplePacketCreator {
                                                 mplew.writeShort(statupdate.getRight().shortValue());
                                         }
                                 } else if (statupdate.getLeft().getValue() < 0xFFFF) {
-                                        mplew.writeShort(statupdate.getRight().shortValue());
+                                        mplew.writeShort(statupdate.getRight().shortValue());   // str, dex, int, luk here are represent by type `short`
                                 } else if (statupdate.getLeft().getValue() == 0x20000) {
                                         mplew.writeShort(statupdate.getRight().shortValue());
                                 } else {

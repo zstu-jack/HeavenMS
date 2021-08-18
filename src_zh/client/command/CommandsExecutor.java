@@ -247,16 +247,14 @@ public class CommandsExecutor {
         // addCommand("warp", 2, WarpCommand.class);
         // addCommand(new String[]{"warphere", "summon"}, 2, SummonCommand.class);
         // addCommand(new String[]{"warpto", "reach", "follow"}, 2, ReachCommand.class);
-        // addCommand("heal", 2, HealCommand.class);
         // addCommand("drop", 2, ItemDropCommand.class);
-        // addCommand("level", 2, LevelCommand.class);
         // addCommand("levelpro", 2, LevelProCommand.class);
         // addCommand("setslot", 2, SetSlotCommand.class);
         // addCommand("resetskill", 2, ResetSkillCommand.class);
         // addCommand("search", 2, SearchCommand.class);
         // addCommand("jail", 2, JailCommand.class);
         // addCommand("unjail", 2, UnJailCommand.class);
-        // addCommand("job", 2, JobCommand.class);
+        addCommand("job", 2, JobCommand.class);
         // addCommand("unbug", 2, UnBugCommand.class);
         // addCommand("id", 2, IdCommand.class);
         // addCommand("gachalist", GachaListCommand.class);
@@ -288,7 +286,7 @@ public class CommandsExecutor {
 
     private void registerLv6Commands(){
         levelCommandsCursor = new Pair<>((List<String>) new ArrayList<String>(), (List<String>) new ArrayList<String>());
-                // addCommand("debuff", 3, DebuffCommand.class);
+        // addCommand("debuff", 3, DebuffCommand.class);
         // addCommand("fly", 3, FlyCommand.class);
         // addCommand("mutemap", 3, MuteMapCommand.class);
         // addCommand("checkdmg", 3, CheckDmgCommand.class);
@@ -317,7 +315,7 @@ public class CommandsExecutor {
         // addCommand("kill", 3, KillCommand.class);
         // addCommand("seed", 3, SeedCommand.class);
         // addCommand("maxenergy", 3, MaxEnergyCommand.class);
-        // addCommand("killall", 3, KillAllCommand.class);
+        addCommand("killall", 3, KillAllCommand.class);
         addCommand(new String[]{"notice", "公告"}, 3, NoticeCommand.class);
         // addCommand("rip", 3, RipCommand.class);
         // addCommand("openportal", 3, OpenPortalCommand.class);
@@ -404,10 +402,12 @@ public class CommandsExecutor {
         addCommand(new String[]{"item", ".获取物品"}, 2, ItemCommand.class);
 
         addCommand(new String[]{"setstat", "设置状态"}, 2, SetStatCommand.class);
-        addCommand(new String[]{"maxstat", "最高状态"}, 2, MaxStatCommand.class);
-        addCommand(new String[]{"maxskill", "满技能"}, 2, MaxSkillCommand.class);
+        addCommand(new String[]{"maxstat"}, 2, MaxStatCommand.class);
+        addCommand(new String[]{"maxskill"}, 2, MaxSkillCommand.class);
+        addCommand("level", 2, LevelCommand.class);
 
         addCommand(new String[]{"spawn", "刷怪"}, 3, SpawnCommand.class);
+        addCommand("heal", 2, HealCommand.class);
 
         commandsNameDesc.add(levelCommandsCursor);
     }

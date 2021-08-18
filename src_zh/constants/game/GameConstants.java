@@ -61,7 +61,7 @@ public class GameConstants {
     }
     
     // 玩家的 "GETO "命令
-    public static final HashMap<String, Integer> GOTO_TOWNS = new HashMap<String, Integer>() {{
+    public static HashMap<String, Integer> GOTO_TOWNS = new HashMap<String, Integer>() {{
         put("南港", 60000);
         put("彩虹村", 1000000);
         put("射手村", 100000000);
@@ -101,7 +101,7 @@ public class GameConstants {
     }};
     
     // "GETO "命令用于唯一的GMs
-    public static final HashMap<String, Integer> GOTO_AREAS = new HashMap<String, Integer>() {{
+    public static HashMap<String, Integer> GOTO_AREAS = new HashMap<String, Integer>() {{
         put("工作场所", 180000000);
         put("遗迹挖掘现场", 990000000);
         put("蘑菇公园3", 100000005);

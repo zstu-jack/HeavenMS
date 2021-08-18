@@ -302,6 +302,49 @@ public abstract class AbstractMapleCharacterObject extends AbstractAnimatedMaple
         
         return ret;
     }
+
+    private void changeStatPool(int str_, int dex_, int int_, int luk_, int newAp, boolean silent) {
+        effLock.lock();
+        statWlock.lock();
+        try {
+            statUpdates.clear();
+            boolean poolUpdate = false;
+            boolean statUpdate = false;
+
+            setStr(str_);
+            statUpdates.put(MapleStat.STR, str_);
+            setDex(dex_);
+            statUpdates.put(MapleStat.DEX, dex_);
+            setInt(int_);
+            statUpdates.put(MapleStat.INT, int_);
+            setLuk(luk_);
+            statUpdates.put(MapleStat.LUK, luk_);
+
+            setRemainingAp(newAp);
+            statUpdates.put(MapleStat.AVAILABLEAP, remainingAp);
+            
+            statUpdate = true;
+            
+            
+            if (!statUpdates.isEmpty()) {
+                if (poolUpdate) {
+                    dispatchHpmpPoolUpdated();
+                }
+                
+                if (statUpdate) {
+                    dispatchStatUpdated();
+                }
+
+                if (!silent) {
+                    dispatchStatPoolUpdateAnnounced();
+                }
+            }
+        } finally {
+            statWlock.unlock();
+            effLock.unlock();
+        }
+    }
+
     
     private void changeStatPool(Long hpMpPool, Long strDexIntLuk, Long newSp, int newAp, boolean silent) {
         effLock.lock();
@@ -683,6 +726,10 @@ public abstract class AbstractMapleCharacterObject extends AbstractAnimatedMaple
         }
     }
     
+    public void updateStrDexIntLukUnlimited(int x){
+        updateStrDexIntLukUnlimited(x, x, x, x, -1);
+    }
+
     public void updateStrDexIntLuk(int x) {
         updateStrDexIntLuk(x, x, x, x, -1);
     }
@@ -709,6 +756,10 @@ public abstract class AbstractMapleCharacterObject extends AbstractAnimatedMaple
         }
     }
     
+    protected void updateStrDexIntLukUnlimited(int str_, int dex_, int int_, int luk_, int remainingAp) {
+        changeStatPool(str_, dex_, int_, luk_, remainingAp, false);
+    }
+
     protected void updateStrDexIntLuk(int str, int dex, int int_, int luk, int remainingAp) {
         changeStrDexIntLuk(str, dex, int_, luk, remainingAp, false);
     }

@@ -53,13 +53,13 @@ public class GotoCommand extends Command {
             // thanks shavit for noticing goto areas getting loaded from wz needlessly only for the name retrieval
             
             for (Map.Entry<String, Integer> e : towns) {
-                GOTO_TOWNS_INFO += ("'" + e.getKey() + "' - #b" + (MapleMapFactory.loadPlaceName(e.getValue())) + "#k\r\n");
+                GOTO_TOWNS_INFO += ("'" + e.getKey() + " - " + e.getValue().toString() + "' - #b" + (MapleMapFactory.loadPlaceName(e.getValue())) + "#k\r\n");
             }
 
             List<Entry<String, Integer>> areas = new ArrayList<>(GameConstants.GOTO_AREAS.entrySet());
             sortGotoEntries(areas);
             for (Map.Entry<String, Integer> e : areas) {
-                GOTO_AREAS_INFO += ("'" + e.getKey() + "' - #b" + (MapleMapFactory.loadPlaceName(e.getValue())) + "#k\r\n");
+                GOTO_AREAS_INFO += ("'" + e.getKey() + " - " + e.getValue().toString() + "' - #b" + (MapleMapFactory.loadPlaceName(e.getValue())) + "#k\r\n");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -115,6 +115,15 @@ public class GotoCommand extends Command {
         } else {
             gotomaps = GameConstants.GOTO_TOWNS;
         }
+
+        // 客户端暂时不支持输入中文,传id.将参数转为中文
+        for(Map.Entry<String, Integer> entry : gotomaps.entrySet()){
+            player.yellowMessage("map value: " + entry.getValue().toString());
+            if(entry.getValue().toString() == params[0]){
+                params[0] = entry.getKey();
+                break;
+            }
+        }  
         
         if (gotomaps.containsKey(params[0])) {
             MapleMap target = c.getChannelServer().getMapFactory().getMap(gotomaps.get(params[0]));
